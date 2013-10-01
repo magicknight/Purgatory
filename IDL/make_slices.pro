@@ -1,0 +1,32 @@
+PRO make_slices
+  openr,1,'t3/reconstruction_sarlo.rec'
+  img=fltarr(750,280,335)
+  readu,1,img
+  close,1
+  img2=img[*,100,*]
+  img3=img[*,150,*]
+  img4=img[*,200,*]
+  img5=img[*,250,*]
+  img6=img[*,50,*]
+;tvscl,img2
+  img2=reform(img2)
+  img3=reform(img3)
+  img4=reform(img4)
+  img5=reform(img5)
+  img6=reform(img6)
+  openw,1,'test1.img'
+  writeu,1,img2
+  close,1
+  openw,1,'test2.img'
+  writeu,1,img3
+  close,1
+  openw,1,'test3.img'
+  writeu,1,img4
+  close,1
+  openw,1,'test4.img'
+  writeu,1,img5
+  close,1
+  openw,1,'test5.img'
+  writeu,1,img6
+  close,1
+end
